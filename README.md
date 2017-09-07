@@ -1,8 +1,12 @@
 # News Clip Business Network
+Trusted News Network (TNN) - A sample hyperledger composer business network definition (BND)
 
 > This is a news clip Hyperledger Composer sample, which demonstrates the core functionality of Hyperledger Composer by changing the values of the points for producer of clips after a watched transaction and well as changing the value of reputation for consumer that are watching the produced video news clips.
 
-This business network defines:
+**This business network defines:**
+- A network of decentralized users (Participants) that participates in the network by either producing or consuming video/news clips (Assets).
+- Producers earns rewards/points every time the clips they have produced and uploaded into the network are consumed (emitting a watched transaction).
+- Consumers earns reputation points every time they watched a published news clip.
 
 **Participant**
 `User`
