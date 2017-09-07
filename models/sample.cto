@@ -1,0 +1,50 @@
+/**
+ * Sample business network definition.
+ */
+namespace org.acme.sample
+
+asset NewsClip identified by clipId {
+  o String clipId
+  --> User producer
+  o String titles
+  o String topic
+  o String tags
+  o String urls
+  o String length
+  o Boolean published
+}
+
+participant User identified by userId {
+  o String userId
+  o String firstName
+  o String lastName
+  o Double points
+  o Double reputation
+}
+
+transaction PublishedTransaction {
+  --> NewsClip newsClip
+  --> User producer
+}
+
+transaction WatchedTransaction {
+  --> NewsClip newsClip
+  --> User consumer
+}
+
+event WatchedEvent {
+  o String eventName
+  --> NewsClip newsClip
+  --> User producer
+  --> User consumer
+}
+
+event PublishedEvent {
+  o String eventName
+  --> NewsClip newsClip
+  --> User producer
+}
+
+event ErrorEvent {
+  o String eventName
+}
