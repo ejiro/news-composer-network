@@ -6,7 +6,7 @@ namespace org.acme.sample
 asset NewsClip identified by clipId {
   o String clipId
   --> User producer
-  o String titles
+  o String title
   o String topic
   o String tags
   o String urls
@@ -22,14 +22,14 @@ participant User identified by userId {
   o Double reputation
 }
 
-transaction PublishedTransaction {
-  --> NewsClip newsClip
-  --> User producer
-}
-
 transaction WatchedTransaction {
   --> NewsClip newsClip
   --> User consumer
+}
+
+transaction PublishedTransaction {
+  --> NewsClip newsClip
+  --> User producer
 }
 
 event WatchedEvent {
